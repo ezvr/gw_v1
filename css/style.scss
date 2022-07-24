@@ -121,6 +121,16 @@ header {
 
 }
 
+footer{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  font-size:0.7rem;
+  background: #f1f1f1;
+min-height: 7rem;
+}
 
 body {
   font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
