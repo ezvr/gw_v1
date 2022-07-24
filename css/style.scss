@@ -1,9 +1,15 @@
+@import "_mixins-and-variables";
+
+
 header {
   min-height: 80vh;
-  background: #69AB36;
   background-image: url("/img/wallpaper1-lr.jpeg");
   background-size: cover;
   background-position: center;
+  padding:1rem;
+  @include for-tablet-landscape-up{
+    padding: 0;
+  }
 
   nav {
     display: inline-block;
@@ -21,8 +27,11 @@ header {
 
       .moto {
         margin-left: 1rem;
-        font-size: 1.6rem;
+
         text-transform: uppercase;
+        @include for-tablet-portrait-up{
+          font-size: 1.6rem;
+        }
       }
     }
   }
@@ -30,7 +39,7 @@ header {
   .logo {
     width: 60px;
     height: 60px;
-    background: #69AB36;
+    background: $color-gw-green;
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -47,31 +56,47 @@ header {
 }
 
 .contact {
-  margin-top:4rem;
+  margin-top: 4rem;
   font-weight: 500;
+  .left{
+    padding: 1rem;
+    @include for-tablet-landscape-up{
+      padding: 0;
+    }
+    h3 {
+      margin-bottom: 0;
+      margin-top: 2rem;
+      text-transform: uppercase;
+    }
 
-  h3 {
-    margin-bottom: 0;
-    margin-top:2rem;
-    text-transform: uppercase;
+    p {
+      margin-top: 0;
+    }
   }
-  p{
-    margin-top:0;
-  }
 
-  .right{
 
+
+  .right {
+    justify-content: center;
     display: flex;
-    justify-content: right;
+
     align-items: center;
     flex: 1;
+    @include for-tablet-landscape-up {
+      justify-content: right;
+    }
 
-    .logo{
-      width: 300px;
-      height: 300px;
-      background: #69AB36;
+    .logo {
+      margin:3rem 0;
+      width: 150px;
+      height: 150px;
+      background: $color-gw-green;
       border-radius: 50%;
       flex-shrink: 0;
+      @include for-tablet-portrait-up{
+        width: 300px;
+        height: 300px;
+      }
     }
   }
 
@@ -80,6 +105,10 @@ header {
 .columns {
 
   display: flex;
+  flex-direction: column;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
 
 }
 
@@ -95,17 +124,22 @@ header {
 
 body {
   font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
-  color:#464646;
+  color: #464646;
 }
 
-h1{
+h1 {
   text-transform: uppercase;
-  font-size: 3rem;
-  max-width: 400px;
+
+  @include for-tablet-portrait-up {
+    font-size: 3rem;
+    max-width: 400px;
+  }
 }
 
 
-a{
-  color:#464646;
+a {
+  color: #464646;
   text-decoration: none;
 }
+
+
